@@ -1,0 +1,7 @@
+{
+  "name": "NasheApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
