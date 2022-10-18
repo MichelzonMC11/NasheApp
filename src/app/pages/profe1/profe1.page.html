@@ -1,9 +1,178 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>profe1</ion-title>
+<ion-header id="home">
+  <ion-toolbar color="color8">
+    <ion-title class="ion-text-center">AE</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
+  
 </ion-header>
 
-<ion-content>
 
+<!--Menú Lateral-->
+<ion-content>
+  <ion-menu side="start" menuId="start" contentId="Profe">
+    <ion-header id="home">
+      <ion-toolbar>
+        <ion-title>Profesor</ion-title>
+      </ion-toolbar>
+    </ion-header>
+      <ion-content>
+        <ion-list>
+          <div class="empty bg-secondary"></div>
+          <div class="ion-text-center image-over-div">
+          <img src="assets/article.png" alt="" class="image-round border-white">
+          </div>
+              <div class="ion-text-center">
+                <h4>Cristiano</h4>
+          </div>
+          <ion-button [routerLink]="['/perfil-docente']">
+            <ion-icon name="person-outline"></ion-icon>
+            perfil
+          </ion-button>
+          <br>
+          <ion-button [routerLink]="['/asistencia1']">
+            <ion-icon name="checkmark-done-outline"></ion-icon>
+            Asistencia
+          </ion-button>
+          <br>
+          <ion-button [routerLink]="['/home']">
+            <ion-icon name="exit-outline"></ion-icon>
+            Salir
+          </ion-button>
+        </ion-list>
+      </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="Profe"></ion-router-outlet>
+
+  <!--Inicio Cartas-->
+  <p id="datos">{{ nombre }} {{ apellido }}</p>
+    <h1 id="datos">Ingenieria Informatica</h1>
+    <h6 id="datos">Cursos</h6>
+    <ion-card color="color8">
+      <img src="assets/ingles.jpg" alt="xxx">
+      <ion-card-header>
+        <ion-card-title>Seccion-001D</ion-card-title>
+        <ion-card-subtitle>Ingles Intermedio</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+        <p>
+          <ion-button [routerLink]="['/asistencia1']" expand="block" fill="outline">
+            Asistencia
+          </ion-button>
+        </p>
+
+        <p>
+          <ion-button expand="block" fill="outline" >
+            Generar QR
+          </ion-button>
+        </p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card color="color8">
+      <ion-card-header>
+        <ion-card-title>Seccion-002D</ion-card-title>
+        <ion-card-subtitle>Clases de Portugues</ion-card-subtitle>
+      </ion-card-header>
+      <img src="assets/idipotuguese.jpeg" alt="xxx">
+      <ion-card-content>
+        <p>
+          <ion-button [routerLink]="['/asistencia1']" expand="block" fill="outline">
+            Asistencia
+          </ion-button>
+        </p>
+
+        <p>
+          <ion-button expand="block" fill="outline" >
+            Generar QR
+          </ion-button>
+        </p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card color="color8">
+      <ion-card-header>
+        <ion-card-title>Seccion-003D</ion-card-title>
+        <ion-card-subtitle>Clases de Futbol</ion-card-subtitle>
+      </ion-card-header>
+      <img src="assets/edufisica.jpg" alt="xxx">
+      <ion-card-content>
+        <p>
+          <ion-button [routerLink]="['/asistencia1']" expand="block" fill="outline">
+            Asistencia
+          </ion-button>
+        </p>
+
+        <p>
+          <ion-button expand="block" fill="outline">
+            Generar QR
+          </ion-button>
+        </p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card color="color8">
+      <ion-card-header>
+        <ion-card-title>Seccion-004D</ion-card-title>
+        <ion-card-subtitle>Arquitectura</ion-card-subtitle>
+      </ion-card-header>
+      <img src="assets/arqui.jpg" alt="xxx">
+      <ion-card-content>
+        <p>
+          <ion-button [routerLink]="['/asistencia1']" expand="block" fill="outline">
+            Asistencia
+          </ion-button>
+        </p>
+
+        <p>
+          <ion-button expand="block" fill="outline" >
+            Generar QR
+          </ion-button>
+        </p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card color="color8">
+      <ion-card-header>
+        <ion-card-title>Seccion-005D</ion-card-title>
+        <ion-card-subtitle>Clases de BoxD</ion-card-subtitle>
+      </ion-card-header>
+      <img src="assets/muha.jpg" alt="xxx">
+      <ion-card-content>
+        <p>
+          <ion-button [routerLink]="['/asistencia1']" expand="block" fill="outline">
+            Asistencia
+          </ion-button>
+        </p>
+
+        <p>
+          <ion-button expand="block" fill="outline" >
+            Generar QR
+          </ion-button>
+        </p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card color="color8">
+      <ion-card-header>
+        <ion-card-title>Seccion-006D</ion-card-title>
+        <ion-card-subtitle>Programacion de Aplicaciones Moviles</ion-card-subtitle>
+      </ion-card-header>
+      <img src="assets/programacion.jpeg" alt="xxx">
+      <ion-card-content>
+        <p>
+          <ion-button [routerLink]="['/asistencia1']" expand="block" fill="outline">
+            Asistencia
+          </ion-button>
+        </p>
+
+        <p>
+          <ion-button expand="block" fill="outline">
+            Generar QR
+          </ion-button>
+        </p>
+      </ion-card-content>
+    </ion-card>
 </ion-content>

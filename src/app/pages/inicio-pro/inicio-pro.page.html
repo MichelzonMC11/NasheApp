@@ -1,9 +1,37 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>inicio-pro</ion-title>
+<ion-header [translucent]="true" id="home">
+  <ion-toolbar color="color8">
+    <ion-buttons>
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Inicio Docente
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content [fullscreen]="true">
+  <div id="container">
+    <ion-grid >
+      <ion-row>
+        <img src="assets/uc.png" alt="xxx">
+      </ion-row>
+    </ion-grid>
+    <form [formGroup]="usuarioForm" (ngSubmit)="validarDatos()">
+      <ion-item color="color">
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input formControlName="usuI" [pattern]="usuIni" color="colorprincipal"></ion-input>
+      </ion-item>
+      <ion-item color="color">
+        <ion-label position="floating">Contraseña:</ion-label>
+        <ion-input formControlName="contraI" [pattern]="contraIni" color="colorprincipal" type="password"></ion-input>
+      </ion-item>
+      <br>
+      <div id="boton">
+        <ion-button (click)="presentAlert()" [routerLink]="['/profe1']" [disabled]="!usuarioForm.valid" color="color5">Ingresar</ion-button>
+      </div>
+      <div id="boton">
+        <ion-button [routerLink]="['/regis-pro']" color="color5">Registrar</ion-button>
+      </div>
+    </form>
+  </div>
 </ion-content>

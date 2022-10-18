@@ -1,9 +1,51 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>perfil-alu</ion-title>
+  <ion-toolbar color="color6">
+    <ion-title id="home">Perfil Alumno</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content color="color6">
+  <div class="ion-text-center text-profile">
+    <img src="assets/icon.png" id="imag">
+  </div>
+  <!--Perfil y Datos-->
+  <h1 id="datos">Martinez</h1>
+  <ion-list lines="none" inset="true">
+    <ion-col>
+      <ion-input placeholder="Martinez"></ion-input>
+        <ion-input placeholder="Campos"></ion-input>
+        <ion-input disabled="true" placeholder="XX.XXX.XXX-X"></ion-input>
+        <ion-input disabled="true" type="mail" placeholder="nashe.ejeplo@chia.ns"></ion-input>
+    </ion-col>
+    <ion-col>
+      <ion-input type="tel" placeholder="  Número de teléfono"></ion-input>
+    </ion-col> 
+  </ion-list>
+  <!--Actividades-->
+  <ion-list lines="none" inset="true">
+    <ion-list-header>
+      <ion-label>ACTIVIDAD RECIENTE</ion-label>
+    </ion-list-header>
+  
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="assets/icon.png" id="imag">
+      </ion-avatar>
+      <ion-label>
+        <h2>Arquitectura_004D</h2>
+        <h5>Nuevo material Unidad 2</h5>
+      </ion-label>
+    </ion-item>
+  
+    <ion-item>
+      <ion-avatar slot="start">
+         <img src="assets/icon.png" id="imag">
+      </ion-avatar>
+      <ion-label>
+        <h2>Inglés Intermedio_013D</h2>
+        <h5>Quiz 1.1.4</h5>
+      </ion-label>
+    </ion-item>
+  </ion-list>  
+  <ion-button [routerLink]="['/estudiante1']">Volver</ion-button>
 </ion-content>

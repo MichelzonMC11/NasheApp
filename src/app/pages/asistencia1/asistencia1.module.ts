@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 import { Asistencia1PageRoutingModule } from './asistencia1-routing.module';
 
@@ -13,7 +15,9 @@ import { Asistencia1Page } from './asistencia1.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    Asistencia1PageRoutingModule
+    Asistencia1PageRoutingModule,
+    MatRadioModule,
+    MatExpansionModule
   ],
   declarations: [Asistencia1Page]
 })

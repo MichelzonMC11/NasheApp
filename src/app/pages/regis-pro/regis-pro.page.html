@@ -1,9 +1,118 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>regis-pro</ion-title>
+  <ion-toolbar color="color8">
+    <ion-buttons>
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Registro docente</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true">
+  <form [formGroup]="registroForm" (ngSubmit)="guardarDatos()">
+    <!--Nombre-->
+    <ion-item>
+      <ion-label position="stacked">Nombre:</ion-label>
+      <ion-input type="text" placeholder="Ingresa tu nombre" formControlName="nombre" [(ngModel)]="valueFromUser"></ion-input>
+    </ion-item>
+    <!--Validaciones-->
+    <ion-label color="danger" *ngIf="registroForm.controls.nombre.errors?.required && (registroForm.controls.nombre.touched || registroForm.controls.nombre.dirty)">
+      * El nombre es obligatorio 
+    </ion-label>
 
+    <ion-label color="danger" *ngIf="registroForm.controls.nombre.errors?.minlength && (registroForm.controls.nombre.touched || registroForm.controls.nombre.dirty)">
+      * Minimo 4 caracteres.
+    </ion-label>
+
+    <ion-label color="danger" *ngIf="registroForm.controls.nombre.errors?.maxlength && (registroForm.controls.nombre.touched || registroForm.controls.nombre.dirty)">
+      * Maximo 12 caracteres 
+    </ion-label>
+    <!--Apellido-->
+    <ion-item>
+      <ion-label position="stacked">Apellido:</ion-label>
+      <ion-input type="text" placeholder="Ingresa Apellido" formControlName="apellido" ></ion-input>
+    </ion-item>
+    <!--Validaciones-->
+    <ion-label color="danger" *ngIf=" registroForm.controls.apellido.errors?.required && (registroForm.controls.apellido.touched || registroForm.controls.apellido.dirty)">
+      *El apellido debe completarse
+    </ion-label>
+
+    <ion-label color="danger" *ngIf=" registroForm.controls.apellido.errors?.minlength && (registroForm.controls.apellido.touched || registroForm.controls.apellido.dirty)">
+      *Minimo 3 caracteres 
+    </ion-label>
+
+    <ion-label color="danger" *ngIf=" registroForm.controls.apellido.errors?.maxlength && (registroForm.controls.apellido.touched || registroForm.controls.apellido.dirty)">
+      *Maximo 10 caracteres 
+    </ion-label>
+    <!--Contraseña-->
+    <ion-item>
+      <ion-label position="stacked">Contraseña:</ion-label>
+      <ion-input type="password" placeholder="Ingresa Contraseña" formControlName="contrasena" ></ion-input>
+    </ion-item>
+    <!--Validaciones-->
+    <ion-label color="danger" *ngIf=" registroForm.controls.contrasena.errors?.required && (registroForm.controls.contrasena.touched || registroForm.controls.contrasena.dirty)">
+      *La contraseña debe completarse
+    </ion-label>
+
+    <ion-label color="danger" *ngIf=" registroForm.controls.contrasena.errors?.minlength && (registroForm.controls.contrasena.touched || registroForm.controls.contrasena.dirty)">
+      *La contraseña debe tener minimo 8 caracteres 
+    </ion-label>
+
+    <ion-label color="danger" *ngIf=" registroForm.controls.contrasena.errors?.maxlength && (registroForm.controls.contrasena.touched || registroForm.controls.contrasena.dirty)">
+      *Maximo 16 caracteres
+    </ion-label>
+    <!--Repetir Contraseña-->
+    <ion-item>
+      <ion-label position="stacked">Repetir contraseña:</ion-label>
+      <ion-input type="password" placeholder="Ingresa Contraseña" formControlName="recontrasena" pattern="{{registroForm.controls.contrasena.value }}"></ion-input>
+    </ion-item>
+    <!--Validaciones-->
+    <ion-label color="danger" *ngIf=" registroForm.controls.recontrasena.errors?.required && (registroForm.controls.recontrasena.touched || registroForm.controls.recontrasena.dirty)">
+      *La contraseña debe completarse
+    </ion-label>
+
+    <ion-label color="danger" *ngIf=" registroForm.controls.recontrasena.errors?.pattern && (registroForm.controls.recontrasena.touched || registroForm.controls.recontrasena.dirty)">
+      *La contraseña no son iguales
+    </ion-label>
+    <!--Correo-->
+    <ion-item>
+      <ion-label position="stacked">Correo Electronico:</ion-label>
+      <ion-input type="email" placeholder="Ingresa Correo" formControlName="correo"></ion-input>
+    </ion-item>
+    <!--Validaciones-->
+    <ion-label color="danger" *ngIf=" registroForm.controls.correo.errors?.required && (registroForm.controls.correo.touched || registroForm.controls.correo.dirty)">
+      *Correo debe ser Ingresado
+    </ion-label>
+
+    <ion-label id="error" color="danger" *ngIf="registroForm.controls.correo.errors?.email && (registroForm.controls.correo.touched || registroForm.controls.correo.dirty)">
+      *El email no es correcto</ion-label>
+    <!--Numero Telefonico-->
+    <ion-item>
+      <ion-label position="stacked">Telefono:</ion-label>
+      <ion-input type="number" placeholder="+569 Numero Telefonico solo 8 numeros" formControlName="telefono"></ion-input>
+    </ion-item>
+    <!--Validaciones-->
+    <ion-label color="danger" *ngIf=" registroForm.controls.telefono.errors?.required && (registroForm.controls.telefono.touched || registroForm.controls.telefono.dirty) ">
+      *Poner Número Telefonico
+    </ion-label>
+
+    <ion-label color="danger" *ngIf="(registroForm.controls.telefono.errors?.max || registroForm.controls.telefono.errors?.min) && 
+      (registroForm.controls.telefono.touched || registroForm.controls.telefono.dirty)">
+      *El telefono debe ser de 8 digitos</ion-label>
+    <!--Rut-->
+    <ion-item>
+      <ion-label position="stacked">Rut:</ion-label>
+      <ion-input type="text" placeholder="12345678-1 Con guion" formControlName="rut" [pattern]="validarRut"></ion-input>
+    </ion-item>
+    <!--Validaciones-->
+    <ion-label color="danger" *ngIf=" registroForm.controls.rut.errors?.required && (registroForm.controls.rut.touched || registroForm.controls.rut.dirty) ">
+      *Poner Rut
+    </ion-label>
+
+    <ion-label color="danger" *ngIf=" registroForm.controls.rut.errors?.pattern && (registroForm.controls.rut.touched || registroForm.controls.rut.dirty) ">
+      *Con guion
+    </ion-label>
+    <!---->
+    <ion-button position="stacked"  type="submit" (click)="pasoDatos()" (click)="presentAlert()" [disabled]="!registroForm.valid">Registrarse</ion-button>
+  </form>
+    
 </ion-content>

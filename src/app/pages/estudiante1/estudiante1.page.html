@@ -1,9 +1,105 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>estudiante1</ion-title>
+<ion-header id="home">
+  <ion-toolbar color="color4">
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>AE</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content color="color6" [style.visibility]="content_visibility">
+  <h2 id="datos">Ingenieria Informatica</h2>
+  <!--Inicio Cartas-->
+  <p id="datos">{{ nombre }} {{ apellido }}</p>
+    <h6 id="datos">Cursos</h6>
+    <ion-card color="color2">
+      <img src="assets/ingles.jpg" alt="xxx">
+      <ion-card-header>
+        <ion-card-title>Zinedine Zidane</ion-card-title>
+        <ion-card-subtitle>Ingles Intermedio_013D</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+        <p>
+          <ion-button expand="block" fill="outline" (click)="startScan()">
+            Abrir camara
+          </ion-button>
+        </p>
+      </ion-card-content>
+    </ion-card>
 
+    <ion-card color="color2">
+      <ion-card-header>
+        <ion-card-title>Cristiano Ronaldo</ion-card-title>
+        <ion-card-subtitle>Clases de Portugues_003D</ion-card-subtitle>
+      </ion-card-header>
+      <img src="assets/idipotuguese.jpeg" alt="xxx">
+      <ion-card-content>
+        <p>
+          <ion-button expand="block" fill="outline" (click)="startScan()">
+            Abrir camara
+          </ion-button>
+        </p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card color="color2">
+      <ion-card-header>
+        <ion-card-title>Lionel Andrés Messi Cuccittini</ion-card-title>
+        <ion-card-subtitle>Clases de Futbol_002D</ion-card-subtitle>
+      </ion-card-header>
+      <img src="assets/edufisica.jpg" alt="xxx">
+      <ion-card-content>
+        <p>
+          <ion-button expand="block" fill="outline" (click)="startScan()">
+            Abrir camara
+          </ion-button>
+        </p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card color="color2">
+      <ion-card-header>
+        <ion-card-title>Xavi Hernández</ion-card-title>
+        <ion-card-subtitle>Arquitectura_004D</ion-card-subtitle>
+      </ion-card-header>
+      <img src="assets/arqui.jpg" alt="xxx">
+      <ion-card-content>
+        <p>
+          <ion-button expand="block" fill="outline" (click)="startScan()">
+            Abrir camara
+          </ion-button>
+        </p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card color="color2">
+      <ion-card-header>
+        <ion-card-title>Muhammad Ali</ion-card-title>
+        <ion-card-subtitle>Clases de Box_004D</ion-card-subtitle>
+      </ion-card-header>
+      <img src="assets/muha.jpg" alt="xxx">
+      <ion-card-content>
+        <p>
+          <ion-button expand="block" fill="outline" (click)="startScan()">
+            Abrir camara
+          </ion-button>
+        </p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card color="color2">
+      <ion-card-header>
+        <ion-card-title>VICTOR ISIDRO ROSENDO LUGO</ion-card-title>
+        <ion-card-subtitle>Programacion de Aplicaciones Moviles_002D</ion-card-subtitle>
+      </ion-card-header>
+      <img src="assets/programacion.jpeg" alt="xxx">
+      <ion-card-content>
+        <p>
+          <ion-button expand="block" fill="outline" (click)="startScan()">
+            Abrir camara
+          </ion-button>
+        </p>
+      </ion-card-content>
+    </ion-card>
 </ion-content>

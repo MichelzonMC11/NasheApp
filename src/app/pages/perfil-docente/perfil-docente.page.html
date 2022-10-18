@@ -1,9 +1,25 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>perfil-docente</ion-title>
+  <ion-toolbar color="color8">
+    <ion-title id="home">Perfil Docente</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content color="color8">
+  <div class="ion-text-center text-profile">
+    <img src="assets/article.png" id="imag">
+  </div>
+  <!--Perfil y Datos-->
+  <h1 id="datos">Francisco</h1>
+  <ion-list lines="none" inset="true">
+    <ion-col>
+      <ion-input placeholder="Francisco"></ion-input>
+        <ion-input placeholder="Rodriguez"></ion-input>
+        <ion-input disabled="true" placeholder="12.345.678-9"></ion-input>
+        <ion-input disabled="true" type="mail" placeholder="correo.ejemplo@gmail.com"></ion-input>
+    </ion-col>
+    <ion-col>
+      <ion-input type="tel" placeholder="  Número de teléfono"></ion-input>
+    </ion-col> 
+  </ion-list>  
+  <ion-button [routerLink]="['/profe1']">Volver</ion-button>
 </ion-content>

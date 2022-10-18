@@ -1,9 +1,121 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>asistencia1</ion-title>
+  <ion-toolbar color="color8">
+    <ion-buttons>
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+      <ion-title>Asistencia</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+<!--menu lateral-->
 
+  <!--lista-->
+  <div class="ion-text-center text-profile">
+    <h1 id="datos">Alumnos</h1>
+  </div>
+ 
+
+<ion-list class="grid">
+  
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <ion-avatar>
+              <img src="assets/icon.png" alt="xxx">
+            </ion-avatar>
+            <ion-label>Elsa Capunta</ion-label>
+            <td class="por">{{porcentaje4 | percent}}</td>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-radio-group aria-label="Select an option">
+          
+          <mat-radio-button value="1">Ausente</mat-radio-button>
+          <mat-radio-button class="op" value="2">Presente</mat-radio-button>
+        
+        </mat-radio-group>
+      </mat-expansion-panel>
+    </mat-accordion>
+  
+
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <ion-avatar>
+              <img src="assets/icon.png" alt="xxx">
+            </ion-avatar>
+            <ion-label>Alan Brito</ion-label>
+            <td class="por">{{porcentaje0 | percent}}</td>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-radio-group aria-label="Select an option">
+          <mat-radio-button value="1">Ausente</mat-radio-button>
+          <mat-radio-button value="2">Presente</mat-radio-button>
+        </mat-radio-group>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <ion-avatar>
+              <img src="assets/icon.png" alt="xxx">
+            </ion-avatar>
+            <ion-label>Elba Surita</ion-label>
+            <td class="por">{{porcentaje1 | percent}}</td>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-radio-group aria-label="Select an option">
+          <mat-radio-button value="1">Ausente</mat-radio-button>
+          <mat-radio-button value="2">Presente</mat-radio-button>
+        </mat-radio-group>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <ion-avatar>
+              <img src="assets/icon.png" alt="xxx">
+            </ion-avatar>
+            <ion-label>Armando Mesas</ion-label>
+            <td class="por">{{porcentaje2 | percent}}</td>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-radio-group aria-label="Select an option">
+          <mat-radio-button checked="true" value="1">Ausente</mat-radio-button>
+          <mat-radio-button value="2">Presente</mat-radio-button>
+        </mat-radio-group>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <ion-avatar>
+              <img src="assets/icon.png" alt="xxx">
+            </ion-avatar>
+            <ion-label>Elton Tito</ion-label>
+            <td class="por">{{porcentaje3 | percent}}</td>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-radio-group aria-label="Select an option">
+          <mat-radio-button checked="true" value="1">Ausente</mat-radio-button>
+          <mat-radio-button value="2">Presente</mat-radio-button>
+        </mat-radio-group>
+      </mat-expansion-panel>
+    </mat-accordion>
+  
+</ion-list>
+
+<ion-footer>
+  <ion-button (click)="presentAlert()">Guardar Asistencia</ion-button>
+</ion-footer>
 </ion-content>

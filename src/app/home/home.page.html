@@ -1,20 +1,37 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
+<ion-header [translucent]="true" id="home">
+  <ion-toolbar color="color5">
     <ion-title>
-      Blank
+      AE
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
+<ion-content [fullscreen]="true" color="color">
+  
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-grid>
+      <ion-row>
+        <img src="assets/uc.png" alt="xxx">
+      </ion-row>
+    </ion-grid>
+    <form [formGroup]="usuarioForm" (ngSubmit)="validarDatos()">
+      <ion-item color="color">
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input formControlName="usuI" [pattern]="usuIni" color="colorprincipal"></ion-input>
+      </ion-item>
+      <ion-item color="color">
+        <ion-label position="floating">Contraseña:</ion-label>
+        <ion-input formControlName="contraI" [pattern]="contraIni" color="colorprincipal" type="password"></ion-input>
+      </ion-item>
+      <br>
+      <div>
+        <ion-button (click)="presentAlert()" [routerLink]="['/estudiante1']" 
+          color="color5">Ingresar</ion-button>
+      </div>
+     
+      <div>
+        <ion-button [routerLink]="['/inicio-pro']">Inicio Sesion docente</ion-button>
+      </div>
+    </form>
   </div>
 </ion-content>
